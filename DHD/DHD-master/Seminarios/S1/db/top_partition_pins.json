@@ -1,0 +1,85 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SegDigit1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SegDigit2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+					"strict" : false
+				},
+				{
+					"name" : "Velocidad[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Velocidad[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Velocidad[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Reloj",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
