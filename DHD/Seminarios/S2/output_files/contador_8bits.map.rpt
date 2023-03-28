@@ -168,7 +168,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-; contador_8bits.vhd               ; yes             ; User VHDL File  ; /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_8bits.vhd ;         ;
+; contador_8bits.vhd               ; yes             ; User VHDL File  ; /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_8bits.vhd ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 
 
@@ -269,14 +269,14 @@ Info: Command: quartus_map --read_settings_files=on --write_settings_files=off c
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file contador_8bits.vhd
-    Info (12022): Found design unit 1: CONTADOR_8BITS-FUNCIONAL File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_8bits.vhd Line: 13
-    Info (12023): Found entity 1: CONTADOR_8BITS File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_8bits.vhd Line: 7
+    Info (12022): Found design unit 1: CONTADOR_8BITS-FUNCIONAL File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_8bits.vhd Line: 13
+    Info (12023): Found entity 1: CONTADOR_8BITS File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_8bits.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file contador_BCD.vhd
-    Info (12022): Found design unit 1: CONTADOR_BCD-FUNCIONAL File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_BCD.vhd Line: 13
-    Info (12023): Found entity 1: CONTADOR_BCD File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_BCD.vhd Line: 6
+    Info (12022): Found design unit 1: CONTADOR_BCD-FUNCIONAL File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_BCD.vhd Line: 13
+    Info (12023): Found entity 1: CONTADOR_BCD File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_BCD.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file contador_ascendente.vhd
-    Info (12022): Found design unit 1: contador_ascendente-funcional File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_ascendente.vhd Line: 18
-    Info (12023): Found entity 1: contador_ascendente File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_ascendente.vhd Line: 8
+    Info (12022): Found design unit 1: contador_ascendente-funcional File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_ascendente.vhd Line: 18
+    Info (12023): Found entity 1: contador_ascendente File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S2/contador_ascendente.vhd Line: 8
 Info (12127): Elaborating entity "CONTADOR_8BITS" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"

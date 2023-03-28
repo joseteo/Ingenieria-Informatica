@@ -168,10 +168,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-; dec_7seg.vhd                     ; yes             ; User VHDL File  ; /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/dec_7seg.vhd       ;         ;
-; contador_8bits.vhd               ; yes             ; User VHDL File  ; /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/contador_8bits.vhd ;         ;
-; Div_frec.vhd                     ; yes             ; User VHDL File  ; /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/Div_frec.vhd       ;         ;
-; top.vhd                          ; yes             ; User VHDL File  ; /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd            ;         ;
+; dec_7seg.vhd                     ; yes             ; User VHDL File  ; /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/dec_7seg.vhd       ;         ;
+; contador_8bits.vhd               ; yes             ; User VHDL File  ; /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/contador_8bits.vhd ;         ;
+; Div_frec.vhd                     ; yes             ; User VHDL File  ; /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/Div_frec.vhd       ;         ;
+; top.vhd                          ; yes             ; User VHDL File  ; /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd            ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 
 
@@ -279,21 +279,21 @@ Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file dec_7seg.vhd
-    Info (12022): Found design unit 1: dec_7seg-a File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/dec_7seg.vhd Line: 16
-    Info (12023): Found entity 1: dec_7seg File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/dec_7seg.vhd Line: 9
+    Info (12022): Found design unit 1: dec_7seg-a File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/dec_7seg.vhd Line: 16
+    Info (12023): Found entity 1: dec_7seg File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/dec_7seg.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file contador_8bits.vhd
-    Info (12022): Found design unit 1: contador_8bits-funcional File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/contador_8bits.vhd Line: 14
-    Info (12023): Found entity 1: contador_8bits File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/contador_8bits.vhd Line: 8
+    Info (12022): Found design unit 1: contador_8bits-funcional File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/contador_8bits.vhd Line: 14
+    Info (12023): Found entity 1: contador_8bits File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/contador_8bits.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file Div_frec.vhd
-    Info (12022): Found design unit 1: Div_Frec-funcional File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/Div_frec.vhd Line: 13
-    Info (12023): Found entity 1: Div_Frec File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/Div_frec.vhd Line: 7
+    Info (12022): Found design unit 1: Div_Frec-funcional File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/Div_frec.vhd Line: 13
+    Info (12023): Found entity 1: Div_Frec File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/Div_frec.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file top.vhd
-    Info (12022): Found design unit 1: Top-estructural File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 18
-    Info (12023): Found entity 1: Top File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 6
+    Info (12022): Found design unit 1: Top-estructural File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 18
+    Info (12023): Found entity 1: Top File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 6
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "Div_Frec" for hierarchy "Div_Frec:DivisorFrecuencia" File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 45
-Info (12128): Elaborating entity "contador_8bits" for hierarchy "contador_8bits:Contador8" File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 51
-Info (12128): Elaborating entity "dec_7seg" for hierarchy "dec_7seg:Digito1" File: /home/bal/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 56
+Info (12128): Elaborating entity "Div_Frec" for hierarchy "Div_Frec:DivisorFrecuencia" File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 45
+Info (12128): Elaborating entity "contador_8bits" for hierarchy "contador_8bits:Contador8" File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 51
+Info (12128): Elaborating entity "dec_7seg" for hierarchy "dec_7seg:Digito1" File: /home/teo/Desktop/DHD/Entregables/DHD/Seminarios/S1/top.vhd Line: 56
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
