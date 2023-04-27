@@ -1,0 +1,9 @@
+- name: Mi primer playbook
+  hosts: memoria3
+  remote_user: joseteolv
+  tasks:
+    - name: Ping al host
+      ansible.builtin.ping:
+    - name: Print mensaje
+      ansible.builtin.debug:
+        msg: Hola Ubuntu y Rocky
