@@ -1,0 +1,30 @@
+Estas cadenas estan mal ya que no cumplen con la expresion regular o estan incompletos
+hola_esto_Es_una_cadena
++-+-
+$-$+
+
+Ejemplo estos le faltan el # y las dos ! minimo
+$2.2 $-22 $+1
+
+esta solo le falta las dos !
+$0.#
+
+y esta solo le falta un !
+$0.#!
+
+Esta cadena es valida: $-0123456789#SickKvnt!!
+
+Esta cadena no es valida: $+-0123456789#SickKvnt!!
+$1#hola$234#esta_mal
+
+Esta cadena no tine al menos 1 valor numerico
+$#!!
+Esta cadena tiene un "." demás en la parte numerica
+$3.14.15#Pi_mal!!
+
+Estas cadenas estan bien
+$0#!!
+$2#Teo!!
+$3.1415#Pi_bien!!
+$+10#Practica!!
+$1#Zyzz!!
