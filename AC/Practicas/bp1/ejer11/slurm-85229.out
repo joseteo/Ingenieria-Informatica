@@ -1,0 +1,44 @@
+Id. usuario del trabajo: a3estudiante9
+Id. del trabajo: 85229
+Nombre del trabajo especificado por usuario: helloOMP
+Directorio de trabajo (en el que se ejecuta el script): /home/a3estudiante9/bp1/ejer11
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 2
+
+ 1. Ejecución vector con distinto nº de componentes:
+
+
+  - Para 8388608 componentes:
+Tamaño Vectores:8388608 (4 B)
+Tiempo(seg.):0.038420916	 / Tamaño Vectores:8388608	
+/ V1[0]+V2[0]=V3[0](838860.800000+838860.800000=1677721.600000) / 
+/ V1[8388607]+V2[8388607]=V3[8388607](1677721.500000+0.100000=1677721.600000) /
+0.06user 0.03system 0:00.10elapsed 98%CPU (0avgtext+0avgdata 202760maxresident)k
+0inputs+0outputs (0major+664minor)pagefaults 0swaps
+
+  - Para 16777216 componentes:
+Tamaño Vectores:16777216 (4 B)
+Tiempo(seg.):0.071228210	 / Tamaño Vectores:16777216	
+/ V1[0]+V2[0]=V3[0](1677721.600000+1677721.600000=3355443.200000) / 
+/ V1[16777215]+V2[16777215]=V3[16777215](3355443.100000+0.100000=3355443.200000) /
+0.07user 0.09system 0:00.16elapsed 98%CPU (0avgtext+0avgdata 399676maxresident)k
+0inputs+0outputs (0major+834minor)pagefaults 0swaps
+
+  - Para 33554432 componentes:
+Tamaño Vectores:33554432 (4 B)
+Tiempo(seg.):0.138954278	 / Tamaño Vectores:33554432	
+/ V1[0]+V2[0]=V3[0](3355443.200000+3355443.200000=6710886.400000) / 
+/ V1[33554431]+V2[33554431]=V3[33554431](6710886.300000+0.100000=6710886.400000) /
+0.17user 0.15system 0:00.32elapsed 100%CPU (0avgtext+0avgdata 793180maxresident)k
+0inputs+0outputs (0major+1100minor)pagefaults 0swaps
+
+  - Para 67108864 componentes:
+Tamaño Vectores:67108864 (4 B)
+Tiempo(seg.):0.273245770	 / Tamaño Vectores:67108864	
+/ V1[0]+V2[0]=V3[0](6710886.400000+6710886.400000=13421772.800000) / 
+/ V1[67108863]+V2[67108863]=V3[67108863](13421772.700000+0.100000=13421772.800000) /
+0.35user 0.29system 0:00.64elapsed 99%CPU (0avgtext+0avgdata 1573764maxresident)k
+0inputs+0outputs (0major+1554minor)pagefaults 0swaps

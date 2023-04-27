@@ -1,0 +1,40 @@
+Id. usuario del trabajo: a3estudiante9
+Id. del trabajo: 85223
+Nombre del trabajo especificado por usuario: helloOMP
+Directorio de trabajo (en el que se ejecuta el script): /home/a3estudiante9/bp1/ejer11
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 2
+
+ 1. Ejecución vector con distinto nº de componentes:
+
+
+  - Para 8388608 componentes:
+Tiempo(seg.):0.035462661	 / Tamaño Vectores:8388608	
+/ V1[0]+V2[0]=V3[0](838860.800000+838860.800000=1677721.600000) / 
+/ V1[8388607]+V2[8388607]=V3[8388607](1677721.500000+0.100000=1677721.600000) /
+0.04user 0.04system 0:00.09elapsed 97%CPU (0avgtext+0avgdata 202756maxresident)k
+0inputs+0outputs (0major+652minor)pagefaults 0swaps
+
+  - Para 16777216 componentes:
+Tiempo(seg.):0.064512455	 / Tamaño Vectores:16777216	
+/ V1[0]+V2[0]=V3[0](1677721.600000+1677721.600000=3355443.200000) / 
+/ V1[16777215]+V2[16777215]=V3[16777215](3355443.100000+0.100000=3355443.200000) /
+0.08user 0.07system 0:00.16elapsed 100%CPU (0avgtext+0avgdata 399908maxresident)k
+0inputs+0outputs (0major+883minor)pagefaults 0swaps
+
+  - Para 33554432 componentes:
+Tiempo(seg.):0.127119852	 / Tamaño Vectores:33554432	
+/ V1[0]+V2[0]=V3[0](3355443.200000+3355443.200000=6710886.400000) / 
+/ V1[33554431]+V2[33554431]=V3[33554431](6710886.300000+0.100000=6710886.400000) /
+0.16user 0.14system 0:00.30elapsed 99%CPU (0avgtext+0avgdata 791276maxresident)k
+0inputs+0outputs (0major+613minor)pagefaults 0swaps
+
+  - Para 67108864 componentes:
+Tiempo(seg.):0.250752036	 / Tamaño Vectores:67108864	
+/ V1[0]+V2[0]=V3[0](6710886.400000+6710886.400000=13421772.800000) / 
+/ V1[67108863]+V2[67108863]=V3[67108863](13421772.700000+0.100000=13421772.800000) /
+0.31user 0.29system 0:00.61elapsed 99%CPU (0avgtext+0avgdata 1573420maxresident)k
+0inputs+0outputs (0major+1458minor)pagefaults 0swaps

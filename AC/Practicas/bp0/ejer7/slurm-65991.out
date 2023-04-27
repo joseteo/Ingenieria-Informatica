@@ -1,0 +1,29 @@
+Id. usuario del trabajo: a3estudiante9
+Id. del trabajo: 65991
+Nombre del trabajo especificado por usuario: helloOMP
+Directorio de trabajo (en el que se ejecuta el script): /home/a3estudiante9/bp0/ejer7
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 24
+
+ 1. Ejecución helloOMP una vez sin cambiar nº de threads (valor por defecto):
+
+Tiempo(seg.):0.000167918	 / Tamaño Vectores:65536	
+/ V1[0]+V2[0]=V3[0](0.478039+0.521500=0.999539) / 
+/ V1[65535]+V2[65535]=V3[65535](7.131694+2.416921=9.548615) /
+Tiempo(seg.):0.000343934	 / Tamaño Vectores:131072	
+/ V1[0]+V2[0]=V3[0](0.478039+0.521500=0.999539) / 
+/ V1[131071]+V2[131071]=V3[131071](0.810547+1.387710=2.198257) /
+Tiempo(seg.):0.000724366	 / Tamaño Vectores:262144	
+/ V1[0]+V2[0]=V3[0](0.478039+0.521500=0.999539) / 
+/ V1[262143]+V2[262143]=V3[262143](0.965009+1.064863=2.029872) /
+srun: error: atcgrid1: task 0: Segmentation fault (core dumped)
+srun: error: atcgrid1: task 0: Segmentation fault (core dumped)
+srun: error: atcgrid1: task 0: Segmentation fault (core dumped)
+srun: error: atcgrid1: task 0: Segmentation fault (core dumped)
+srun: error: atcgrid1: task 0: Segmentation fault (core dumped)
+srun: error: atcgrid1: task 0: Segmentation fault (core dumped)
+srun: error: atcgrid1: task 0: Segmentation fault (core dumped)
+srun: error: atcgrid1: task 0: Segmentation fault (core dumped)

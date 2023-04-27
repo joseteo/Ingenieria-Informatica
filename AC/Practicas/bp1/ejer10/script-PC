@@ -1,0 +1,14 @@
+#!/bin/bash -vx
+i=14
+a=16384
+while [ $i -le 27 ]
+do
+	#b=$(./SumaVectoresCglobales $a )
+	#b=$(./sp-OpenMP-for $a )
+	b=$(./sp-OpenMP-sections $a )
+	#echo $i""$b >> salidaVectoresGlobales.dat
+	#echo $i""$b >> salidasp-OpenMP-for.dat
+	echo $i""$b >> salidasp-OpenMP-sections.dat
+	((i+=1))
+	((a=a*2))
+done

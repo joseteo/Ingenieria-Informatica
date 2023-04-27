@@ -1,0 +1,54 @@
+static y chunk por defecto ----------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000403143
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+
+static y chunk 1 --------------------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000501219
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+
+static y chunk 64 -------------------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000616442
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+
+dynamic y chunk por defecto ----------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000036642
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+
+dynamic y chunk 1 --------------------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000035323
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+
+dynamic y chunk 64 -------------------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000036232
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+
+guided y chunk por defecto ----------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000037119
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+
+guided y chunk 1 --------------------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000031583
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+
+guided y chunk 64 -------------------------------------- 
+Tamaño de la matriz y vector= 2200	 / Tiempo(seg.) 0.000037152
+matriz_x_vector[0]= 39600
+matriz_x_vector[2199]= 18
+
+

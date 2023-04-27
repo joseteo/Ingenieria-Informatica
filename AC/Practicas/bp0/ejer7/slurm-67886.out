@@ -1,0 +1,36 @@
+Id. usuario del trabajo: a3estudiante9
+Id. del trabajo: 67886
+Nombre del trabajo especificado por usuario: helloOMP
+Directorio de trabajo (en el que se ejecuta el script): /home/a3estudiante9/bp0/ejer7
+Cola: ac
+Nodo que ejecuta este trabajo:atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid2
+CPUs por nodo: 24
+
+ 1. Ejecución helloOMP una vez sin cambiar nº de threads (valor por defecto):
+
+Tiempo(seg.):0.002815140	 / Tamaño Vectores:524288	
+/ V1[0]+V2[0]=V3[0](2.882197+1.326061=4.208258) / 
+/ V1[524287]+V2[524287]=V3[524287](0.138654+2.316226=2.454880) /
+Tiempo(seg.):0.004695404	 / Tamaño Vectores:1048576	
+/ V1[0]+V2[0]=V3[0](2.882197+1.326061=4.208258) / 
+/ V1[1048575]+V2[1048575]=V3[1048575](4.414716+0.053000=4.467716) /
+Tiempo(seg.):0.008497100	 / Tamaño Vectores:2097152	
+/ V1[0]+V2[0]=V3[0](7.674442+0.408416=8.082858) / 
+/ V1[2097151]+V2[2097151]=V3[2097151](0.743861+1.234701=1.978562) /
+Tiempo(seg.):0.016149786	 / Tamaño Vectores:4194304	
+/ V1[0]+V2[0]=V3[0](7.674442+0.408416=8.082858) / 
+/ V1[4194303]+V2[4194303]=V3[4194303](1.044146+7.160001=8.204147) /
+Tiempo(seg.):0.031529597	 / Tamaño Vectores:8388608	
+/ V1[0]+V2[0]=V3[0](7.674442+0.408416=8.082858) / 
+/ V1[8388607]+V2[8388607]=V3[8388607](0.558655+0.374503=0.933159) /
+Tiempo(seg.):0.062226441	 / Tamaño Vectores:16777216	
+/ V1[0]+V2[0]=V3[0](25.334932+0.004451=25.339383) / 
+/ V1[16777215]+V2[16777215]=V3[16777215](9.955158+25.648899=35.604058) /
+Tiempo(seg.):0.123842402	 / Tamaño Vectores:33554432	
+/ V1[0]+V2[0]=V3[0](1.506798+2.232162=3.738960) / 
+/ V1[33554431]+V2[33554431]=V3[33554431](0.128979+1.169285=1.298264) /
+Tiempo(seg.):0.237542963	 / Tamaño Vectores:67108864	
+/ V1[0]+V2[0]=V3[0](0.509224+0.531915=1.041140) / 
+/ V1[67108863]+V2[67108863]=V3[67108863](2.294746+1.318073=3.612819) /
