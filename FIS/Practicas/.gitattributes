@@ -1,0 +1,3 @@
+Relacion[[:space:]]1.2.odt filter=lfs diff=lfs merge=lfs -text
+Relacion[[:space:]]1.1.odt filter=lfs diff=lfs merge=lfs -text
+Relacion[[:space:]]2.1.odt filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,10 @@
+1-Medico
+2-Enfermer@s
+3-Auxiliar de enfermeria
+4-Administrativo
+5-Administrador
+6-Cirujano
+7-Paciente
+8-Asistencia tecnica
+9-Sistema Informatico
+10-Tecnico Emergencias Sanitarias
