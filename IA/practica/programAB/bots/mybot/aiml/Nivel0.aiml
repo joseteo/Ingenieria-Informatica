@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<category>
+	<pattern>Hablame un poco de ti</pattern>
+
+	<template>
+		Soy ingeniero informatico graduado en la universidad de granada,
+		tengo un master en inteligencia artificial aplicada al sector automovilistico,
+		y trabaje anteriormente en AUDI dos años
+	</template>
+
+</category>
+
+
+<category>
+	<pattern>^ [hablame cuentame dime comentame] ^ (algo) sobre ti ^</pattern>
+
+	<template>
+		<srai> HABLAME UN POCO DE TI</srai>
+	</template>
+
+</category>
+
+
+<category>
+	<pattern>Cual es tu mayor defecto</pattern>
+
+	<template>A veces me estreso, pero luego me relajo, concentro, y lo doy todo para terminar el trabajo</template>
+
+</category>
+
+
+<category>
+	<pattern> ^ [peor mayor gran] defecto ^</pattern>
+
+	<template>
+		<srai>CUAL ES TU MAYOR DEFECTO</srai>
+	</template>
+
+</category>
+
+
+<category>
+	<pattern>Hola ^</pattern>
+
+	<template>
+		<random>
+			<li> Hola! </li>
+			<li> Buenas! Qué tal? </li>
+		</random>
+	</template>
+
+</category>
+
+
+<category>
+	<pattern>Hola soy *</pattern>
+
+	<template>Hola <star/>, que tal</template>
+
+</category>
+
+
+<category>
+	<pattern>Mi nombre es *</pattern>
+
+	<template>Hola <star/>, que tal</template>
+
+</category>
+
+
+<category>
+	<pattern>Cuales son tus tres mayores virtudes</pattern>
+
+	<template>Jugar al futbolin, ser una persona muy sociable y una gran capacidad de auto aprendizaje</template>
+
+</category>
+
+
+<category>
+	<pattern> ^ (mejores)  [cualidades virtudes] (mas positivas) ^</pattern>
+
+	<template>
+		<srai>CUALES SON TUS TRES MAYORES VIRTUDES</srai>
+	</template>
+
+</category>
+
+
+<category>
+	<pattern>Estudio * en *</pattern>
+
+	<template>En <star index="2"/>, yo también estudio <star/></template>
+
+</category>
+
+
+<category>
+	<pattern>Te consideras una persona creativa</pattern>
+
+	<template>Si, tengo una mente abierta y abstracta lo cual me permite encontrar soluciones a algunos problemas dificiles</template>
+
+</category>
+
+
+<category>
+	<pattern> ^ [eres piensas consideras ] ^ creativ+ ^</pattern>
+
+	<template>
+		<srai>TE CONSIDERAS UNA PERSONA CREATIVA</srai>
+	</template>
+
+</category>
+
+
+<category>
+	<pattern>Por que deberiamos contratarte *</pattern>
+
+	<template>
+		<random>
+			<li>Tengo dos años de experiencia trabajando en una empresa como AUDI</li>
+			<li>Tengo mucho que aportar a esta empresa, conmigo la empresa llegara lejos</li>
+			<li>Soy astemio, no causare problemas</li>
+			<li>Y porque no</li>
+		</random>
+	</template>
+
+</category>
+
+
+<category>
+	<pattern> ^ [escoger+ elegir+ seleccionar+ contratar+] ^ </pattern>
+
+	<template>
+		<srai>POR QUE DEBERIAMOS CONTRATARTE</srai>
+	</template>
+
+</category>
+
+
+<category>
+	<pattern>Estoy bien</pattern>
+
+	<template>Pues que bien me alegro</template>
+
+</category>
+
+
+<category>
+	<pattern>Cual es tu edad</pattern>
+
+	<template>Tengo <bot name="age"/> anios</template>
+
+</category>
+
+
+<category>
+	<pattern>^ me llamo *</pattern>
+
+	<template>
+		<set name="nombre"><star index="2"/></set>
+		<get name="nombre"/> es un bonito nombre.
+	</template>
+
+</category>
+
+<!-- regla 6 -->
+<category>
+	<pattern>Cual es mi nombre</pattern>
+
+	<template>
+		<condition name="nombre">
+			<li value="unknown"> Aun no me has dicho tu nombre</li>
+			<li>Tu nombre es <get name="nombre"/></li>
+		</condition>
+	</template>
+
+</category>
+
+<!-- regla 7 -->
+<category>
+	<pattern>mi color favorito es el *</pattern>
+
+	<template>
+		<think><set var="color"><star/></set></think>
+		El <get var="color"/> es un color que no me gusta.
+	</template>
+
+</category>
+
+<!-- regla 8 -->
+<category>
+	<pattern>* mi nombre</pattern>
+
+	<template><srai>CUAL ES MI NOMBRE</srai></template>
+
+</category>
+
+<!-- regla 9 -->
+<category>
+	<pattern>^ como me llamo</pattern>
+
+	<template><srai>CUAL ES MI NOMBRE</srai></template>
+
+</category>
+
+<!-- regla 10 -->
+<category>
+	<pattern>Es <set>color</set> un color</pattern>
+
+	<template>Si, <star/> es un color </template>
+
+</category>
+
+<!-- regla 11 -->
+<category>
+	<pattern> Es * un color</pattern>
+
+	<template>No, <star/> no es un color</template>
+
+</category>
+
+<!-- regla 12 -->
+<category>
+	<pattern>Cual es la capital de <set>pais</set></pattern>
+
+	<template>La capital de <star/> es <map name="capital"><star/></map>.</template>
+
+</category>
+
+
+<!-- regla 13 -->
+<category>
+	<pattern>Cual es la capital de *</pattern>
+
+	<template>No lo se</template>
+
+</category>
+
+<!-- regla 14 -->
+<category>
+	<pattern>^ cafe ^</pattern>
+
+	<template>Te gusta el cafe</template>
+
+</category>
+
+<!-- regla 15 -->
+<category>
+	<pattern>Si me gusta</pattern>
+
+	<that>TE GUSTA EL CAFE</that>
+
+	<template>Lo prefieres solo o con leche.</template>
+
+</category>
+
+<!-- regla 16 -->
+<category>
+	<pattern>Cuenta hasta <set>number</set></pattern>
+
+	<template>
+		<think>
+			<set var="contador">1</set>
+			<set var="salida">1</set>
+		</think>
+		<condition var="contador">
+			<li><value><star/></value><get var="salida"/></li>
+			<li>
+				<think>
+				<set var="contador">
+					<map name="successor"><get var="contador"/></map>
+				</set>
+				<set var="salida"><get var="salida"/> <get var="contador"/></set>
+				</think>
+				<loop/>
+			</li>
+		</condition>
+	</template>
+
+</category>
+
+
+<category>
+ 	<pattern>how are you feeling today</pattern>
+
+ 	<template>
+		<think>
+      <set name="state">happy</set>
+    </think>
+		<condition name="state">
+      <li value="happy">I am happy!</li>
+      <li value="sad">I am sad!</li>
+		</condition>
+	</template>
+</category>
+
+
+<category>
+	<pattern>adios</pattern>
+
+	<template>Adios, un placer haber hablado con usted</template>
+
+</category>
+
+
+</aiml>

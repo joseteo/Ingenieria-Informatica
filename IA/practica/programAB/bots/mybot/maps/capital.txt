@@ -1,0 +1,15 @@
+francia:paris
+italia:roma
+belgica:bruselas
+noruega:oslo
+suecia:estocolmo
+dinamarca:copenhague
+bulgaria:sofia
+alemania:berlin
+españa:madrid
+espania:madrid
+inglaterra:londres
+reinounido:londres
+portugal:lisboa
+EEUU:washington
+estadosunidos:washington

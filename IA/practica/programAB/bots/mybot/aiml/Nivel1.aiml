@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+
+
+<!--
+*****************************************************************************************
+*****                                 NIVELES 1 y 2                                 *****
+*****************************************************************************************
+-->
+
+
+
+
+<category>
+  <pattern> cita para el * de *</pattern>
+
+  <template>
+
+    <think>
+      <set name="meses">Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre</set>
+      <set var="num_mes">
+        <srai> FINDITEM <star index="2"/> IN <get name="meses"/></srai>
+      </set>
+    </think>
+
+    <think>
+      <set name="dia"> <map name="numeros" > <star/> </map></set>
+      <set name="mes"> <map name="numeros" ><get var="num_mes"/></map></set>
+    </think>
+
+    <think>
+      <set name="dia-mes-año"> <get name="dia"/>-<get name="mes"/>-20</set>
+    </think>
+
+    <think>
+      <set var="cont">8</set>
+      <set name="aux">TRUE</set>
+    </think>
+
+      <condition name="aux">
+        <li value="FALSE"></li>
+        <li value="TRUE">
+          <think>
+            <set name="cont_h">
+              <map name="numeros" ><get var="cont"/> </map>:00
+            </set>
+
+            <set name="aux">
+              <srai>IS BUSY DAY <get name="dia-mes-año"/> AT <get name="cont_h"/></srai>
+            </set>
+
+            <set var= "cont">
+              <srai> PLUS <get var="cont"/> 1 </srai>
+            </set>
+  				</think>
+          <loop/>
+        </li>
+
+      </condition>
+
+      <condition var="cont">
+        <li value="22">Lo siento no puedo esta ocupado, desea otro dia</li>
+        <li>Hay huecos libres, por la mañana o por la tarde</li>
+      </condition>
+
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^ reserv+ (para) el (dia) * de * </pattern>
+
+  <template>
+    <srai> CITA PARA EL <star index="2"/> DE <star index="3"/> </srai>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^ (para) (el) (dia) * de * </pattern>
+
+  <template>
+    <srai> CITA PARA EL <star index="2"/> DE <star index="3"/> </srai>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^ disponible (para) el (dia) * de * </pattern>
+
+  <template>
+    <srai> CITA PARA EL <star index="2"/> DE <star index="3"/> </srai>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^ huecos libres de * a * </pattern>
+
+  <template>
+    <condition name="dia-mes-año">
+    	<li value="unknown"> Introduce la fecha </li>
+    	<li>
+        <think>
+          <set var="cont"> <star index="2"/> </set>
+        </think>
+
+        <condition var="cont">
+          <think>
+            <set name="list_h"></set>
+          </think>
+
+          <li>
+            <value><star index="3"/></value>
+          </li>
+
+          <li>
+            <think>
+              <set name="cont_h">
+                <map name="numeros" ><get var="cont"/> </map>:00
+              </set>
+
+              <set name="aux">
+                <srai>IS BUSY DAY <get name="dia-mes-año"/> AT <get name="cont_h"/> </srai>
+              </set>
+            </think>
+
+            <condition name="aux">
+              <li value="FALSE">
+                <think>
+                  <set name="list_h">
+                    <srai>ADDITEM <get name="cont_h"/> IN <get name="list_h"/> </srai>
+                  </set>
+                </think>
+              </li>
+            </condition>
+
+            <think>
+              <set var="cont">
+                <srai>PLUS <get var="cont"/> 1 </srai>
+              </set>
+            </think>
+
+            <loop/>
+          </li>
+
+        </condition>
+
+        <think>
+          <set var= "cont">1</set>
+        </think>
+      	<think>
+          <set name= "cant">
+            <srai> COUNT <get name="list_h"/> </srai>
+          </set>
+        </think>
+
+      	<think>
+          <set name="list_h_creciente">_</set>
+        </think>
+
+      	<condition var="cont">
+      		<li><value><get name="cant"/></value></li>
+      		<li>
+      			<think>
+              <set name="hora_c">
+              	<srai> SELECTITEM <get var="cont"/> IN <get name="list_h"/> </srai>
+              </set>
+
+        			<set name="list_h_creciente">
+        				<srai>ADDITEM <get name="hora_c"/> IN <get name="list_h_creciente"/> </srai>
+        			</set>
+
+              <think>
+                <set var= "cont"> <srai>PLUS <get var="cont"/> 1 </srai></set>
+              </think>
+
+      			</think>
+            <loop/>
+          </li>
+        </condition>
+
+        <think>
+          <set var="elem">
+            <srai>COUNT <get name="list_h_creciente"/></srai>
+          </set>
+
+          <set var= "elem">
+            <srai>MINUS <get name="cant"/> 1 </srai>
+          </set>
+
+          <set name="list_h_creciente">
+      			<srai>SUBLIST FROM 1 TO <get var="elem"/>  OF <get name="list_h_creciente"/></srai>
+      		</set>
+      	</think>
+
+        <think>
+          <set var="una_hora"><star index="2"/></set>
+          <set var="una_hora"><srai> PLUS <get var="una_hora"/> 1 </srai></set>>
+      		<set var="impr"> <srai> COMPARE <get var="una_hora"/> WITH <star index="3"/> </srai> </set>
+      	</think>
+
+        <condition var="impr">
+      		<li value="NO">
+            <get name="list_h_creciente"/>
+          </li>
+
+      		<li>
+            <get name="list_h_creciente"/> esta libre
+          </li>
+
+        </condition>
+
+      	<think>
+          <set name="list_h">_</set>
+        </think>
+
+      </li>
+    </condition>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^  la mañana </pattern>
+
+  <template>
+    Las horas libres son:
+	  <srai>  HUECOS LIBRES DE 8 A 13 </srai>
+    Quiere alguna de estas horas para su cita
+	  <think>
+      <set name="list_h_siguientes">
+        <srai> ITERATE <get name="list_h_creciente"/> </srai>
+      </set>
+    </think>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^  la tarde </pattern>
+
+  <template>
+    Las horas libres son:
+    <srai>  HUECOS LIBRES DE 13 A 21 </srai>
+    Quiere alguna de estas horas para su cita
+	  <think>
+      <set name="list_h_siguientes">
+        <srai> ITERATE <get name="list_h_creciente"/> </srai>
+      </set>
+    </think>
+
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> si a las * </pattern>
+
+  <template>
+    Vale, quiere otra cita
+    <srai>  MARK OCUPADO AT <star/> ON <get name="dia-mes-año"/> </srai>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^ igual ^ </pattern>
+
+  <template>
+    <condition name="list_h_siguientes">
+      <li value="20:00"> No quedan horas libres quiere otro dia </li>
+      <li>
+        <think>
+          <set name="list_h_siguientes">
+            <srai>  NEXT  </srai>
+          </set>
+        </think>
+        No prefiere mejor a las <get name="list_h_siguientes"/>
+      </li>
+
+    </condition>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^ no se ^ </pattern>
+
+  <template>
+    <srai> IGUAL </srai>
+  </template>
+
+</category>
+
+
+<category>
+  <pattern> ^ ni idea ^ </pattern>
+
+  <template>
+    <srai> IGUAL </srai>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern> ^ no me importa ^ </pattern>
+
+  <template>
+    <srai> IGUAL </srai>
+  </template>
+
+</category>
+
+
+
+<category>
+  <pattern>no</pattern>
+
+  <that>VALE, QUIERE OTRA CITA</that>
+
+  <template>
+    Vale
+  </template>
+
+</category>
+
+
+
+</aiml>
