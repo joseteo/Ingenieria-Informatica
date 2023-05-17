@@ -7,9 +7,14 @@ package practica7smm;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
-import practica7smm.Lienzo2D.Forma;
+import javax.swing.JOptionPane;
+//import practica7smm.Lienzo2D.Forma;
+import sm.JTLV.iu.Lienzo2D;
+import sm.JTLV.iu.Lienzo2D.Forma;
 
 /**
  *
@@ -55,7 +60,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Linea = new javax.swing.JToggleButton();
         rectangulo = new javax.swing.JToggleButton();
         Elipse = new javax.swing.JToggleButton();
-        Arco = new javax.swing.JToggleButton();
+        Curva = new javax.swing.JToggleButton();
         Smile = new javax.swing.JToggleButton();
         Seleccion = new javax.swing.JToggleButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
@@ -65,13 +70,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ColorRojo = new javax.swing.JButton();
         ColorAzul = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        ColorBlanco = new javax.swing.JButton();
         ColorAmarillo = new javax.swing.JButton();
         ColorVerde = new javax.swing.JButton();
+        MasColores = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
         RellenoB = new javax.swing.JToggleButton();
         Transparencia = new javax.swing.JToggleButton();
         Alisar = new javax.swing.JToggleButton();
+        GrosorTrazo = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         BarraDeEstado = new javax.swing.JLabel();
@@ -81,6 +87,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Nuevo = new javax.swing.JMenuItem();
         Abrir = new javax.swing.JMenuItem();
         Guardar = new javax.swing.JMenuItem();
+        Imagen = new javax.swing.JMenu();
 
         FormListener formListener = new FormListener();
 
@@ -137,12 +144,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Elipse.addActionListener(formListener);
         jToolBar1.add(Elipse);
 
-        Arco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/curva.png"))); // NOI18N
-        Arco.setFocusable(false);
-        Arco.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Arco.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        Arco.addActionListener(formListener);
-        jToolBar1.add(Arco);
+        Curva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/curva.png"))); // NOI18N
+        Curva.setFocusable(false);
+        Curva.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Curva.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Curva.addActionListener(formListener);
+        jToolBar1.add(Curva);
 
         Smile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/smile.png"))); // NOI18N
         Smile.setFocusable(false);
@@ -165,7 +172,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(214, 217, 223));
 
         ColorNegro.setBackground(new java.awt.Color(0, 0, 0));
-        ColorNegro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ColorNegro.setBorder(null);
+        ColorNegro.setBorderPainted(false);
         ColorNegro.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ColorNegro.setMaximumSize(new java.awt.Dimension(18, 15));
         ColorNegro.setMinimumSize(new java.awt.Dimension(18, 15));
@@ -174,7 +182,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel5.add(ColorNegro);
 
         ColorRojo.setBackground(new java.awt.Color(255, 0, 0));
-        ColorRojo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ColorRojo.setBorder(null);
         ColorRojo.setMaximumSize(new java.awt.Dimension(18, 15));
         ColorRojo.setMinimumSize(new java.awt.Dimension(18, 15));
         ColorRojo.setPreferredSize(new java.awt.Dimension(18, 15));
@@ -182,7 +190,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel5.add(ColorRojo);
 
         ColorAzul.setBackground(new java.awt.Color(0, 0, 255));
-        ColorAzul.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ColorAzul.setBorder(null);
         ColorAzul.setMaximumSize(new java.awt.Dimension(18, 15));
         ColorAzul.setMinimumSize(new java.awt.Dimension(18, 15));
         ColorAzul.setName(""); // NOI18N
@@ -194,16 +202,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(214, 217, 223));
 
-        ColorBlanco.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        ColorBlanco.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        ColorBlanco.setMaximumSize(new java.awt.Dimension(18, 15));
-        ColorBlanco.setMinimumSize(new java.awt.Dimension(18, 15));
-        ColorBlanco.setPreferredSize(new java.awt.Dimension(18, 15));
-        ColorBlanco.addActionListener(formListener);
-        jPanel6.add(ColorBlanco);
-
         ColorAmarillo.setBackground(new java.awt.Color(255, 255, 0));
-        ColorAmarillo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ColorAmarillo.setBorder(null);
         ColorAmarillo.setMaximumSize(new java.awt.Dimension(18, 15));
         ColorAmarillo.setMinimumSize(new java.awt.Dimension(18, 15));
         ColorAmarillo.setName(""); // NOI18N
@@ -212,12 +212,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel6.add(ColorAmarillo);
 
         ColorVerde.setBackground(new java.awt.Color(0, 255, 0));
-        ColorVerde.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ColorVerde.setBorder(null);
         ColorVerde.setMaximumSize(new java.awt.Dimension(18, 15));
         ColorVerde.setMinimumSize(new java.awt.Dimension(18, 15));
         ColorVerde.setPreferredSize(new java.awt.Dimension(18, 15));
         ColorVerde.addActionListener(formListener);
         jPanel6.add(ColorVerde);
+
+        MasColores.setBackground(new java.awt.Color(214, 217, 223));
+        MasColores.setText("  +");
+        MasColores.setAlignmentX(0.5F);
+        MasColores.setBorder(null);
+        MasColores.setBorderPainted(false);
+        MasColores.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MasColores.setMaximumSize(new java.awt.Dimension(18, 15));
+        MasColores.setMinimumSize(new java.awt.Dimension(18, 15));
+        MasColores.setPreferredSize(new java.awt.Dimension(18, 15));
+        MasColores.addActionListener(formListener);
+        jPanel6.add(MasColores);
 
         jPanel4.add(jPanel6, java.awt.BorderLayout.SOUTH);
 
@@ -235,13 +247,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Transparencia.setFocusable(false);
         Transparencia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Transparencia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Transparencia.addActionListener(formListener);
         jToolBar1.add(Transparencia);
 
         Alisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/alisar.png"))); // NOI18N
         Alisar.setFocusable(false);
         Alisar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Alisar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Alisar.addActionListener(formListener);
         jToolBar1.add(Alisar);
+
+        GrosorTrazo.addChangeListener(formListener);
+        jToolBar1.add(GrosorTrazo);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
@@ -294,6 +311,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(Archivo);
 
+        Imagen.setText("Imagen");
+        jMenuBar1.add(Imagen);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -301,7 +321,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Code for dispatching events from components to event handlers.
 
-    private class FormListener implements java.awt.event.ActionListener {
+    private class FormListener implements java.awt.event.ActionListener, javax.swing.event.ChangeListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             if (evt.getSource() == TrazoLibre) {
@@ -316,11 +336,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             else if (evt.getSource() == Elipse) {
                 VentanaPrincipal.this.ElipseActionPerformed(evt);
             }
-            else if (evt.getSource() == Arco) {
-                VentanaPrincipal.this.ArcoActionPerformed(evt);
+            else if (evt.getSource() == Curva) {
+                VentanaPrincipal.this.CurvaActionPerformed(evt);
             }
             else if (evt.getSource() == Smile) {
                 VentanaPrincipal.this.SmileActionPerformed(evt);
+            }
+            else if (evt.getSource() == Seleccion) {
+                VentanaPrincipal.this.SeleccionActionPerformed(evt);
             }
             else if (evt.getSource() == ColorNegro) {
                 VentanaPrincipal.this.ColorNegroActionPerformed(evt);
@@ -331,17 +354,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             else if (evt.getSource() == ColorAzul) {
                 VentanaPrincipal.this.ColorAzulActionPerformed(evt);
             }
-            else if (evt.getSource() == ColorBlanco) {
-                VentanaPrincipal.this.ColorBlancoActionPerformed(evt);
-            }
             else if (evt.getSource() == ColorAmarillo) {
                 VentanaPrincipal.this.ColorAmarilloActionPerformed(evt);
             }
             else if (evt.getSource() == ColorVerde) {
                 VentanaPrincipal.this.ColorVerdeActionPerformed(evt);
             }
+            else if (evt.getSource() == MasColores) {
+                VentanaPrincipal.this.MasColoresActionPerformed(evt);
+            }
             else if (evt.getSource() == RellenoB) {
                 VentanaPrincipal.this.RellenoBActionPerformed(evt);
+            }
+            else if (evt.getSource() == Transparencia) {
+                VentanaPrincipal.this.TransparenciaActionPerformed(evt);
+            }
+            else if (evt.getSource() == Alisar) {
+                VentanaPrincipal.this.AlisarActionPerformed(evt);
             }
             else if (evt.getSource() == Nuevo) {
                 VentanaPrincipal.this.NuevoActionPerformed(evt);
@@ -352,8 +381,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             else if (evt.getSource() == Guardar) {
                 VentanaPrincipal.this.GuardarActionPerformed(evt);
             }
-            else if (evt.getSource() == Seleccion) {
-                VentanaPrincipal.this.SeleccionActionPerformed(evt);
+        }
+
+        public void stateChanged(javax.swing.event.ChangeEvent evt) {
+            if (evt.getSource() == GrosorTrazo) {
+                VentanaPrincipal.this.GrosorTrazoStateChanged(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -364,7 +396,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BarraDeEstado.setText("Linea");
         rectangulo.setSelected(false);
         Elipse.setSelected(false);
-        Arco.setSelected(false);
+        Curva.setSelected(false);
         TrazoLibre.setSelected(false);
         Smile.setSelected(false);
     }//GEN-LAST:event_LineaActionPerformed
@@ -373,6 +405,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaInterna vi = new VentanaInterna();
         Escritorio.add(vi);
         vi.setVisible(true);
+        BufferedImage img;
+        img = new BufferedImage(300,300,BufferedImage.TYPE_INT_RGB);
+        int[] color = new int[img.getHeight()*img.getWidth()];
+        for(int i=0; i < color.length; i++)
+            color[i] = 0xFFFFFF;
+
+        img.setRGB(0, 0, img.getWidth(), img.getHeight(), color, 0, img.getWidth());
+        vi.getLienzo().setImage(img);
     }//GEN-LAST:event_NuevoActionPerformed
 
     private void ColorNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorNegroActionPerformed
@@ -390,10 +430,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             this.getLienzoSeleccionado().setColor(Color.blue);
     }//GEN-LAST:event_ColorAzulActionPerformed
 
-    private void ColorBlancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorBlancoActionPerformed
-        if(this.getLienzoSeleccionado() != null)
-            this.getLienzoSeleccionado().setColor(Color.white);
-    }//GEN-LAST:event_ColorBlancoActionPerformed
+    private void MasColoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasColoresActionPerformed
+        if(this.getLienzoSeleccionado() != null){
+            Color color = JColorChooser.showDialog(this, "Elije un color", Color.RED);
+            this.getLienzoSeleccionado().setColor(color);
+        }
+    }//GEN-LAST:event_MasColoresActionPerformed
 
     private void ColorAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorAmarilloActionPerformed
         if(this.getLienzoSeleccionado() != null)
@@ -411,7 +453,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BarraDeEstado.setText("Rectangulo");
         Linea.setSelected(false);
         Elipse.setSelected(false);
-        Arco.setSelected(false);
+        Curva.setSelected(false);
         TrazoLibre.setSelected(false);
         Smile.setSelected(false);
     }//GEN-LAST:event_rectanguloActionPerformed
@@ -422,7 +464,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BarraDeEstado.setText("Elipse");
         rectangulo.setSelected(false);
         Linea.setSelected(false);
-        Arco.setSelected(false);
+        Curva.setSelected(false);
         TrazoLibre.setSelected(false);
         Smile.setSelected(false);
     }//GEN-LAST:event_ElipseActionPerformed
@@ -430,29 +472,51 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void AbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirActionPerformed
         JFileChooser dlg = new JFileChooser();
         int resp = dlg.showOpenDialog(this);
-        if( resp == JFileChooser.APPROVE_OPTION) {
-            File f = dlg.getSelectedFile();
+        if (resp == JFileChooser.APPROVE_OPTION) {
+            try{
+                File f = dlg.getSelectedFile();
+                BufferedImage img = ImageIO.read(f);
+                VentanaInterna vi = new VentanaInterna();
+                vi.getLienzo().setImage(img);
+                this.Escritorio.add(vi);
+                vi.setTitle(f.getName());
+                vi.setVisible(true);
+            }catch(Exception ex){
+                System.err.println("Error al leer la imagen");
+            }
         }
     }//GEN-LAST:event_AbrirActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        JFileChooser dlg = new JFileChooser();
-        int resp = dlg.showSaveDialog(this);
-        if( resp == JFileChooser.APPROVE_OPTION) {
-            File f = dlg.getSelectedFile();
+        VentanaInterna vi = (VentanaInterna)Escritorio.getSelectedFrame();
+        if (vi != null) {
+            BufferedImage img = vi.getLienzo().getImage(true);
+            if (img != null) {
+                JFileChooser dlg = new JFileChooser();
+                int resp = dlg.showSaveDialog(this);
+                if (resp == JFileChooser.APPROVE_OPTION) {
+                    try {
+                        File f = dlg.getSelectedFile();
+                        ImageIO.write(img, "jpg", f);
+                        vi.setTitle(f.getName());
+                    } catch (Exception ex) {
+                        System.err.println("Error al guardar la imagen");
+                    }
+                }
+            }
         }
     }//GEN-LAST:event_GuardarActionPerformed
 
-    private void ArcoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArcoActionPerformed
+    private void CurvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurvaActionPerformed
         if(this.getLienzoSeleccionado() != null)
-            this.getLienzoSeleccionado().setForma(Forma.ARC);
-        BarraDeEstado.setText("Arco");
+            this.getLienzoSeleccionado().setForma(Forma.QUADRATICCURVE);
+        BarraDeEstado.setText("Curva");
         Linea.setSelected(false);
         Elipse.setSelected(false);
         rectangulo.setSelected(false);
         TrazoLibre.setSelected(false);
         Smile.setSelected(false);
-    }//GEN-LAST:event_ArcoActionPerformed
+    }//GEN-LAST:event_CurvaActionPerformed
 
     private void TrazoLibreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrazoLibreActionPerformed
         if(this.getLienzoSeleccionado() != null)
@@ -461,7 +525,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Linea.setSelected(false);
         Elipse.setSelected(false);
         rectangulo.setSelected(false);
-        Arco.setSelected(false);
+        Curva.setSelected(false);
         Smile.setSelected(false);
     }//GEN-LAST:event_TrazoLibreActionPerformed
 
@@ -477,14 +541,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Linea.setSelected(false);
         Elipse.setSelected(false);
         rectangulo.setSelected(false);
-        Arco.setSelected(false);
+        Curva.setSelected(false);
         TrazoLibre.setSelected(false);
     }//GEN-LAST:event_SmileActionPerformed
 
     private void SeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeleccionActionPerformed
         if(this.getLienzoSeleccionado() != null)
             this.getLienzoSeleccionado().setMover(Seleccion.isSelected());
+        BarraDeEstado.setText("Mover Figuras");
     }//GEN-LAST:event_SeleccionActionPerformed
+
+    private void GrosorTrazoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_GrosorTrazoStateChanged
+        if(this.getLienzoSeleccionado() != null){
+            Stroke grosor = new BasicStroke((int)GrosorTrazo.getValue());
+            this.getLienzoSeleccionado().setGrosor(grosor);
+        }
+    }//GEN-LAST:event_GrosorTrazoStateChanged
+
+    private void TransparenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransparenciaActionPerformed
+        if(this.getLienzoSeleccionado() != null)
+            this.getLienzoSeleccionado().setTransparente(Transparencia.isSelected());
+    }//GEN-LAST:event_TransparenciaActionPerformed
+
+    private void AlisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlisarActionPerformed
+        if(this.getLienzoSeleccionado() != null)
+            this.getLienzoSeleccionado().setAlisar(Alisar.isSelected());
+    }//GEN-LAST:event_AlisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -527,19 +609,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton AbrirB;
     private javax.swing.JToggleButton Alisar;
     private javax.swing.JMenu Archivo;
-    private javax.swing.JToggleButton Arco;
     private javax.swing.JLabel BarraDeEstado;
     private javax.swing.JButton ColorAmarillo;
     private javax.swing.JButton ColorAzul;
-    private javax.swing.JButton ColorBlanco;
     private javax.swing.JButton ColorNegro;
     private javax.swing.JButton ColorRojo;
     private javax.swing.JButton ColorVerde;
+    private javax.swing.JToggleButton Curva;
     private javax.swing.JToggleButton Elipse;
     private javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JSpinner GrosorTrazo;
     private javax.swing.JMenuItem Guardar;
     private javax.swing.JToggleButton GuardarB;
+    private javax.swing.JMenu Imagen;
     private javax.swing.JToggleButton Linea;
+    private javax.swing.JButton MasColores;
     private javax.swing.JMenuItem Nuevo;
     private javax.swing.JToggleButton NuevoB;
     private javax.swing.JToggleButton RellenoB;

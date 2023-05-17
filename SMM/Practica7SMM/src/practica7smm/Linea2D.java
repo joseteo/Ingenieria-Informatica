@@ -38,12 +38,7 @@ public class Linea2D extends java.awt.geom.Line2D.Double{
         Point2D NuevoP = new Point2D.Double(
                 this.getX2() + NuevoX,
                 this.getY2() + NuevoY);
-        /*double Xmod = p1.getX() + NuevoX;
-        double Ymod = p1.getY() + NuevoY;
-        Point2D Pmod = new Point2D.Double(
-                Xmod,
-                Ymod
-        );*/        
+        
         this.setLine(p1, NuevoP);
     }
 }

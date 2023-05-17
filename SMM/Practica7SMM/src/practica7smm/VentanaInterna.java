@@ -43,6 +43,7 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
         PanelSur = new javax.swing.JPanel();
         ListaFuentes = new javax.swing.JComboBox<>();
         VentanaClipActiva = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
         Lienzo2D = new practica7smm.Lienzo2D();
 
         setClosable(true);
@@ -67,7 +68,10 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
         PanelSur.add(VentanaClipActiva);
 
         getContentPane().add(PanelSur, java.awt.BorderLayout.PAGE_END);
-        getContentPane().add(Lienzo2D, java.awt.BorderLayout.CENTER);
+
+        jScrollPane1.setViewportView(Lienzo2D);
+
+        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -88,5 +92,6 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> ListaFuentes;
     private javax.swing.JPanel PanelSur;
     private javax.swing.JCheckBox VentanaClipActiva;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
