@@ -5,7 +5,9 @@
 package practica7smm;
 
 import java.awt.GraphicsEnvironment;
+import java.awt.geom.Point2D;
 import javax.swing.DefaultComboBoxModel;
+import sm.JTLV.iu.Lienzo2D;
 
 /**
  *
@@ -29,6 +31,10 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
     public Lienzo2D getLienzo(){
         return Lienzo2D;
     }
+
+    public String getCoordenadas(){
+        return Coordenadas.getText();
+    }
   
        
     /**
@@ -43,13 +49,16 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
         PanelSur = new javax.swing.JPanel();
         ListaFuentes = new javax.swing.JComboBox<>();
         VentanaClipActiva = new javax.swing.JCheckBox();
+        Coordenadas = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Lienzo2D = new practica7smm.Lienzo2D();
+        Lienzo2D = new sm.JTLV.iu.Lienzo2D();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+
+        PanelSur.setLayout(new java.awt.BorderLayout());
 
         ListaFuentes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ListaFuentes.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +66,7 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
                 ListaFuentesActionPerformed(evt);
             }
         });
-        PanelSur.add(ListaFuentes);
+        PanelSur.add(ListaFuentes, java.awt.BorderLayout.LINE_START);
 
         VentanaClipActiva.setText("VentanaClipActiva");
         VentanaClipActiva.addActionListener(new java.awt.event.ActionListener() {
@@ -65,10 +74,18 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
                 VentanaClipActivaActionPerformed(evt);
             }
         });
-        PanelSur.add(VentanaClipActiva);
+        PanelSur.add(VentanaClipActiva, java.awt.BorderLayout.CENTER);
+
+        Coordenadas.setText("Coordenadas");
+        PanelSur.add(Coordenadas, java.awt.BorderLayout.LINE_END);
 
         getContentPane().add(PanelSur, java.awt.BorderLayout.PAGE_END);
 
+        Lienzo2D.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                Lienzo2DMouseMoved(evt);
+            }
+        });
         jScrollPane1.setViewportView(Lienzo2D);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -86,9 +103,19 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
         Lienzo2D.repaint();
     }//GEN-LAST:event_VentanaClipActivaActionPerformed
 
+    private void Lienzo2DMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lienzo2DMouseMoved
+        if(Lienzo2D != null 
+                && Lienzo2D.getCoordenada() != null){
+            double mx = Lienzo2D.getCoordenada().getX();
+            double my = Lienzo2D.getCoordenada().getY();
+            Coordenadas.setText( mx + "x" + my );
+        }
+    }//GEN-LAST:event_Lienzo2DMouseMoved
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private practica7smm.Lienzo2D Lienzo2D;
+    private javax.swing.JLabel Coordenadas;
+    private sm.JTLV.iu.Lienzo2D Lienzo2D;
     private javax.swing.JComboBox<String> ListaFuentes;
     private javax.swing.JPanel PanelSur;
     private javax.swing.JCheckBox VentanaClipActiva;

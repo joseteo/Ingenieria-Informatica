@@ -81,6 +81,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         BarraDeEstado = new javax.swing.JLabel();
+        Coordenadas = new javax.swing.JLabel();
         Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         Archivo = new javax.swing.JMenu();
@@ -101,18 +102,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         NuevoB.setFocusable(false);
         NuevoB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         NuevoB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        NuevoB.addActionListener(formListener);
         jToolBar1.add(NuevoB);
 
         AbrirB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/abrir.png"))); // NOI18N
         AbrirB.setFocusable(false);
         AbrirB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AbrirB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        AbrirB.addActionListener(formListener);
         jToolBar1.add(AbrirB);
 
         GuardarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/guardar.png"))); // NOI18N
         GuardarB.setFocusable(false);
         GuardarB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         GuardarB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        GuardarB.addActionListener(formListener);
         jToolBar1.add(GuardarB);
         jToolBar1.add(jSeparator1);
 
@@ -276,9 +280,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BarraDeEstado.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel3.add(BarraDeEstado, java.awt.BorderLayout.CENTER);
 
+        Coordenadas.setText("Coordenadas");
+        jPanel3.add(Coordenadas, java.awt.BorderLayout.LINE_END);
+
         jPanel1.add(jPanel3, java.awt.BorderLayout.SOUTH);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
+
+        Escritorio.addMouseMotionListener(formListener);
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
@@ -321,7 +330,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Code for dispatching events from components to event handlers.
 
-    private class FormListener implements java.awt.event.ActionListener, javax.swing.event.ChangeListener {
+    private class FormListener implements java.awt.event.ActionListener, java.awt.event.MouseMotionListener, javax.swing.event.ChangeListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             if (evt.getSource() == TrazoLibre) {
@@ -380,6 +389,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
             else if (evt.getSource() == Guardar) {
                 VentanaPrincipal.this.GuardarActionPerformed(evt);
+            }
+            else if (evt.getSource() == NuevoB) {
+                VentanaPrincipal.this.NuevoBActionPerformed(evt);
+            }
+            else if (evt.getSource() == AbrirB) {
+                VentanaPrincipal.this.AbrirBActionPerformed(evt);
+            }
+            else if (evt.getSource() == GuardarB) {
+                VentanaPrincipal.this.GuardarBActionPerformed(evt);
+            }
+        }
+
+        public void mouseDragged(java.awt.event.MouseEvent evt) {
+        }
+
+        public void mouseMoved(java.awt.event.MouseEvent evt) {
+            if (evt.getSource() == Escritorio) {
+                VentanaPrincipal.this.EscritorioMouseMoved(evt);
             }
         }
 
@@ -568,6 +595,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             this.getLienzoSeleccionado().setAlisar(Alisar.isSelected());
     }//GEN-LAST:event_AlisarActionPerformed
 
+    private void EscritorioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EscritorioMouseMoved
+        /*if(this.Escritorio.getSelectedFrame() != null)
+            Coordenadas.setText(  ((VentanaInterna)Escritorio.getSelectedFrame()).getCoordenadas()  );*/
+    }//GEN-LAST:event_EscritorioMouseMoved
+
+    private void NuevoBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoBActionPerformed
+        NuevoActionPerformed(evt);
+        NuevoB.setSelected(false);
+    }//GEN-LAST:event_NuevoBActionPerformed
+
+    private void AbrirBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirBActionPerformed
+        AbrirActionPerformed(evt);
+        AbrirB.setSelected(false);
+    }//GEN-LAST:event_AbrirBActionPerformed
+
+    private void GuardarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBActionPerformed
+        GuardarActionPerformed(evt);
+        GuardarB.setSelected(false);
+    }//GEN-LAST:event_GuardarBActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -615,6 +662,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton ColorNegro;
     private javax.swing.JButton ColorRojo;
     private javax.swing.JButton ColorVerde;
+    private javax.swing.JLabel Coordenadas;
     private javax.swing.JToggleButton Curva;
     private javax.swing.JToggleButton Elipse;
     private javax.swing.JDesktopPane Escritorio;
