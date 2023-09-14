@@ -1,0 +1,4 @@
+enum TipoFrenos {
+  DISCO,
+  TAMBOR
+}

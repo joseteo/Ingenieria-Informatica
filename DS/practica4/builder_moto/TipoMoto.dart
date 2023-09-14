@@ -1,0 +1,5 @@
+enum TipoMoto {
+  MOTODEPORTIVA,
+  MOTOSCOOTER,
+  MOTOTOURING
+}

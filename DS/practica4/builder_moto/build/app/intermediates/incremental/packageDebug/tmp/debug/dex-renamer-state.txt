@@ -1,0 +1,4 @@
+#Thu Jun 01 10:06:28 CEST 2023
+base.0=C\:\\Users\\joset\\Documents\\Ing. Informatica\\Segundo Cuatri\\DS\\gp7-ds-main\\practica4\\practica2\\builder_moto\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

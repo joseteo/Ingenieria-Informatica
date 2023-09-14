@@ -1,0 +1,4 @@
+enum Asiento {
+  ASIENTOROJO,
+  ASIENTOBLANCO
+}
